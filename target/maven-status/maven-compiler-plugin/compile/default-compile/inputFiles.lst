@@ -1,2 +1,4 @@
-C:\CE\05.springboot\k8s_basic\src\main\java\basic\controller\K8SApiController.java
-C:\CE\05.springboot\k8s_basic\src\main\java\basic\K8sBasicApplication.java
+/home/runner/work/app-with-argocd/app-with-argocd/src/main/java/basic/K8sBasicApplication.java
+/home/runner/work/app-with-argocd/app-with-argocd/src/main/java/basic/controller/K8SApiController.java
+/home/runner/work/app-with-argocd/app-with-argocd/src/main/java/basic/entity/Student.java
+/home/runner/work/app-with-argocd/app-with-argocd/src/main/java/basic/repository/StudentRepository.java
