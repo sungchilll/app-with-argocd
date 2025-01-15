@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: app-with-argocd
-        image: sungchilll/app-with-argo:<commit-sha>
+        image: sungchilll/app-with-argo:latest
