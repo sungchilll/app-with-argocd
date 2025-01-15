@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
       - name: app-with-argocd
-        image: sungchilll/app-with-argocd:bb806cd272d41a3fc8d037d00f0eef9218a54262
+        image: sungchilll/app-with-argocd:8d0efff57e2f311cb2d04790cdaca7ea45616e0a
