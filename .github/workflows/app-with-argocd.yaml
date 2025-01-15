@@ -7,6 +7,9 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
     - uses: actions/checkout@v4
@@ -16,6 +19,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Set up Github Token
+      with:
+        repository: ${{ secrets.GIT_USER }}/app-with-argocd
+        ref: main
+        token: ${{ secrets.GIT_TOKEN }}
 
     - name: Make application.properties
       run: |
@@ -61,7 +69,7 @@ jobs:
         
     - name: Set up Image
       run: |
-        sed -i "s%image: ${{ secrets.DOCKERHUB_USERNAME }}/app-with-argocd:[A-z0-9]*%image: ${{ secrets.DOCKERHUB_USERNAME }}/app-with-argocd:${{ github.sha }}%" ./manifest/argocd-deployment.yaml
+        sed -i "s%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:[A-z0-9]*%image: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:${{ github.sha }}%" ./manifest/argocd-deployment.yaml
 
 
     - name: Commit and push changes
